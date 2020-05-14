@@ -4,26 +4,53 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
   <meta http-equiv="Content-Security-Policy" content="default-src * data: gap: https://ssl.gstatic.com; style-src * 'unsafe-inline'; script-src * 'unsafe-inline' 'unsafe-eval'">
+
   <script src="components/loader.js"></script>
-  <script src="components/plugins.js"></script>
   <script src="lib/jquery.min.js"></script>
+  <script src="lib/materialize.min.js"></script>
+  <script src="components/plugins.js"></script>
+
+<!-- MapQuest -->
+  <script src="https://api.mqcdn.com/sdk/mapquest-js/v1.3.2/mapquest.js"></script>
+  <link type="text/css" rel="stylesheet" href="https://api.mqcdn.com/sdk/mapquest-js/v1.3.2/mapquest.css"/>
 
   <link rel="stylesheet" href="components/loader.css">
-  <link rel="stylesheet" href="lib/css/bootstrap.min.css"
+  <link rel="stylesheet" href="lib/css/materialize.min.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
-
-  <script>
-    ons.ready(function() {
-      console.log("Onsen UI is ready!");
-    });
-
-    if (ons.platform.isIPhoneX()) {
-      document.documentElement.setAttribute('onsflag-iphonex-portrait', '');
-      document.documentElement.setAttribute('onsflag-iphonex-landscape', '');
-    }
-  </script>
 </head>
+
 <body>
-  This is a template for Onsen UI app.
+
+  <nav>
+    <div class="nav-wrapper">
+        <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+      <a class="brand-logo">Plugins</a>
+    </div>
+  </nav>
+
+  <ul id="slide-out" class="sidenav">
+    <br>
+    <li><h5><b>Plugins</b></h5></li>
+    <li><div class="divider"></div></li>
+    <li><a id="local">Exibir localização</a></li>
+    <li><a id="alerta">Info (alert)</a></li>
+    <li><a id="confirm">Feedback (confirm)</a></li>
+    <li><a id="beep">Beep</a></li>
+    <li><a id="vibrar">Vibrar</a></li>
+  </ul>
+
+    <div class="row">
+      <div class="col s12">
+        <div class="map" id="map"></div>
+      </div>
+    </div>
+  </div>
+
+<script>
+  $(document).ready(function(){
+    $('.sidenav').sidenav();
+  });
+</script>
 </body>
 </html>
